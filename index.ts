@@ -8,8 +8,8 @@ const devices: Device[] = [[0, 0], [100, 100], [15, 10], [18, 18]];
 
 devices.forEach((device) => {
   const stationsWithPower: StationWithPower[] = BASE_STATIONS.map(createStationWithPower(device));
-  const mostPowerfulStation = getMostPowerfulStation(stationsWithPower);
-  const outputMessage = createOutputMessage(mostPowerfulStation, device);
+  const mostPowerfulStation: StationWithPower = getMostPowerfulStation(stationsWithPower);
+  const outputMessage: string = createOutputMessage(mostPowerfulStation, device);
 
   console.log(outputMessage);
 })
