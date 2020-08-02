@@ -6,4 +6,4 @@ export default (stations: StationWithPower[]): StationWithPower => {
   });
 
   return sortedStations[0];
-}
+};

@@ -12,7 +12,7 @@ describe("createStationWithPower", () => {
     const expectedStationWithPower = {
       station,
       power: 100
-    }
+    };
 
     deepStrictEqual(stationWithPower, expectedStationWithPower);
   });

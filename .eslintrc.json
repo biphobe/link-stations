@@ -3,6 +3,7 @@
     "es6": true
   },
   "extends": [
+    "standard",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended"
   ],
@@ -13,5 +14,9 @@
   },
   "plugins": [
     "@typescript-eslint"
-  ]
+  ],
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"]
+  }
 }

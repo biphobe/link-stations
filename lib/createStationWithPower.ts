@@ -6,4 +6,4 @@ export default (device: Device) => {
     station,
     power: getPower(station, device)
   });
-}
+};
