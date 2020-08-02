@@ -1,18 +1,11 @@
 import { Station, StationWithPower, Device } from "./types";
-import getPower from "./lib/getPower";
+import createStationWithPower from "./lib/createStationWithPower";
 
 const BASE_STATIONS: Station[] = [[0, 0, 10],[20, 20, 5],[10, 0, 12]];
 const devices: Device[] = [[0, 0], [100, 100], [15, 10], [18, 18]];
 
 devices.forEach((device) => {
-  const linkStations: StationWithPower[] = BASE_STATIONS.map((station) => {
-    const power = getPower(station, device);
-
-    return {
-      station,
-      power
-    }
-  });
+  const linkStations: StationWithPower[] = BASE_STATIONS.map(createStationWithPower(device));
   const getMostPowerfulStation = (stations: StationWithPower[]) => {
     const sortedStations = stations.sort((first, second) => {
       return second.power - first.power;
