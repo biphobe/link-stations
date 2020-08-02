@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "npm run build && node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/biphobe/link-stations/issues"
   },
-  "homepage": "https://github.com/biphobe/link-stations#readme"
+  "homepage": "https://github.com/biphobe/link-stations#readme",
+  "devDependencies": {
+    "typescript": "^3.9.7"
+  }
 }
