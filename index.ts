@@ -1,6 +1,6 @@
-const BASE_STATIONS = [[0, 0, 10],[20, 20, 5],[10, 0, 12]];
+import { Station, StationWithPower, Device } from "./types";
 
-const getPower = (station, device) => {
+const getPower = (station: Station, device: Device): number => {
   const [stationX, stationY, stationR] = station;
   const [deviceX, deviceY] = device;
 
@@ -14,12 +14,13 @@ const getPower = (station, device) => {
   }
 
   return (stationR - distance)**2;
-}
+};
 
-const devices = [[0, 0], [100, 100], [15, 10], [18, 18]];
+const BASE_STATIONS: Station[] = [[0, 0, 10],[20, 20, 5],[10, 0, 12]];
+const devices: Device[] = [[0, 0], [100, 100], [15, 10], [18, 18]];
 
 devices.forEach((device) => {
-  const linkStations = BASE_STATIONS.map((station) => {
+  const linkStations: StationWithPower[] = BASE_STATIONS.map((station) => {
     const power = getPower(station, device);
 
     return {
@@ -27,7 +28,7 @@ devices.forEach((device) => {
       power
     }
   });
-  const getMostPowerfulStation = (stations) => {
+  const getMostPowerfulStation = (stations: StationWithPower[]) => {
     const sortedStations = stations.sort((first, second) => {
       return second.power - first.power;
     });
